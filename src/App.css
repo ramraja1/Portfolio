@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Main Div with Background Image */
+.main {
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  margin: 0; /* Remove any margin */
+  padding: 0; /* Remove any padding */
+  background: url('./assets/paw.jpeg') no-repeat center center fixed; /* Background image */
+  background-size: cover; /* Ensure the background image covers the screen */
+  position: relative; /* This ensures that the About section can overlay on top of it */
+}
+
+/* Content inside the Main Div */
+.content {
+  position: absolute;
+  top: 50%; /* Centers the content vertically */
+  left: 50%; /* Centers the content horizontally */
+  transform: translate(-50%, -50%); /* Adjusts for true center alignment */
+  text-align: center;
+}
+
+/* About Section */
+.about {
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  color: white;
+  padding: 50px;
+  position: relative;
+}
+
+.about-content {
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.about p {
+  font-size: 1.25rem;
+}
+
+/* Navbar styles (fixed at top) */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+  transition: opacity 0.3s ease;
+}
+
+/* Navbar background becomes white on scroll */
+.navbar-white {
+  background-color: white !important;
+  opacity: 0.8; /* Make the navbar slightly transparent */
+}
+
+/* Hide navbar when scrolling */
+.navbar-hidden {
+  opacity: 0;
+}
+/* Main container with background image */
+.main {
+  position: relative;
+  background-image: url('./assets/paw.jpeg'); /* Set your background image */
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* Full screen height */
+}
+
+/* Overlay for better text readability */
+.main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: -1;
+}
+
+/* Flexbox container for the content */
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center the content */
+  align-items: flex-start; /* Align text to the left */
+  height: 100%;
+  text-align: left; /* Left align text */
+  color: white;
+  padding-left: 30px; /* Ensure the text is pushed more to the left */
+  position: absolute;
+  left: 0; /* Make sure it's aligned to the left */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust positioning to fully center */
+}
+
+/* Styling for name */
+.name {
+  font-size: 4rem;
+  font-weight: 800;
+  text-shadow: 5px 5px 0px rgba(17, 16, 16, 0.3);
+  margin-bottom: 15px;
+  letter-spacing: -2px; /* Reduce letter spacing further */
+}
+
+/* Styling for role */
+.role {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 1px; /* Slightly reduce letter spacing */
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Role text (the actual changing roles) */
+.role-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #4F89E2; /* Blue accent for roles */
+}
